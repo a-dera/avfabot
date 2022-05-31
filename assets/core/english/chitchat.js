@@ -1,0 +1,5 @@
+/*------ -------------Section --------*/
+var chitchatEnglish = function() {
+
+
+}
