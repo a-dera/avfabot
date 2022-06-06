@@ -12,9 +12,9 @@
   <h3 align="center">👽 AVFA BOT 🤖</h3>
 
   <p align="center">
-    Chat Bot devéloppé et implémenté dans le cadre du ITAUN-Challenge 2021
+    Chat Bot devéloppé et implémenté pour le  Challenge FAEFA. Cette compétition s'inscrit dans le cadre de la première édition du Forum Africain de la Formation, de l'Enseignement Supérieur et de la Recherche Agricoles - FAEFA'22.
     <br />
-    <a href="avfabot.herokuapp.com"><strong>Voir la démonstration »</strong></a>
+    <a href="https://avfabot.herokuapp.com"><strong>Voir la démonstration »</strong></a>
     <br />
     <br />
     <a href="https://github.com/a-dera/avfabot/issues">Signaler un bug</a>
