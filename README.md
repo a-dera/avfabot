@@ -8,18 +8,18 @@
 
 <br />
 <p align="center">
-
-  <h3 align="center">👽 CDA BOT 🤖</h3>
+ <!-- TODO: #2 Rediger correctment le readme -->
+  <h3 align="center">👽 AVFA BOT 🤖</h3>
 
   <p align="center">
     Chat Bot devéloppé et implémenté dans le cadre du ITAUN-Challenge 2021
     <br />
-    <a href="bot-cda.herokuapp.com"><strong>Voir la démonstration »</strong></a>
+    <a href="avfabot.herokuapp.com"><strong>Voir la démonstration »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/a-dera/cdabot/issues">Signaler un bug</a>
+    <a href="https://github.com/a-dera/avfabot/issues">Signaler un bug</a>
     ·
-    <a href="https://github.com/a-dera/cdabot/issues">Demander une fonctionnalité</a>
+    <a href="https://github.com/a-dera/avfabot/issues">Demander une fonctionnalité</a>
   </p>
 </p>
 
@@ -53,32 +53,8 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## A propos du projet
 
-Conversational AI is one of the hottest AI trends of 2021 and considered to be the next big technological breakthrough. A key outcome of this innovative technology is chatbots. A Chatbot, or Conversational Agent, is mainly an artificial intelligence software that mimics a human conversation.
-The chatbot market is expected to grow by USD 1.11 billion, progressing at a CAGR of almost 29% during the forecast period. Many industries like as e-commerce, retail, and banking are demanding Chatbot technologies. A chatbot discharge humans from repetitive and boring tasks. The use of chatbot technology saves costs and improves customer experience for businesses.
-
-With scarcity of talent in emerging technologies like chatbots, companies are turning to competitive coding contests. Guinness World Record setting TechGig Code Gladiators is one such exciting coding platform where companies can scout for the best chatbot developers in the country.
-
-For colloque Africain de la formation 4.0 CAF4’21, ITAUN has partnered with iCompass, a leading AI-based services company for the Chatbot hackathon. 
-The objective of this competition is to create a Chatbot for the CDA website https://www.clusterdigitalafrica.com 
-
-The Chatbot may :
-* Help users to search information provided by the website. For example, ask the chatbot “Who are the FAWR Panelists ?”, the chatbot lists the panelists names.
-* Replace the “contact” page by a dialogue, to make the site more interactive.
-* Offer chitchat conversation. Chitchat is non formal conversation, like when user says “hi”, “by”, “are you a woman ?”, …
-* Support multiple languages: English and French,…
-* Support African dialects
-
-The chatbot may provide a Web page that may be integrated on the CDA website.
-
-The solution must use publicly-available data on CDA website https://www.clusterdigitalafrica.com
-You may use publicly available APIs, like weather, time, and news APIs.
-The Solution should be hosted on the Cloud and be publicly available during the evaluation process. If the solution is not available during the evaluation process, the team will be immediately disqualified from the hackathon.
-Your solution must not infringe the rights of any third party and you must be legally entitled to assign ownership of all rights of copyright in and to the winning solution code to CDA.
-
-
-### Outils de conception
+## Outils de conception
 
 Ce bot a été conçu avec un lot d'outils funs et performants
 * [BotUi](https:/botui.org)
@@ -90,7 +66,7 @@ Ce bot a été conçu avec un lot d'outils funs et performants
 * [Rivescript](https://rivescript.com/)
 * [Docker](https://docker.com/)
 
-### Fonctionnalités
+## Fonctionnalités
 
 Principales fonctionnalités du bot 
 
@@ -104,7 +80,7 @@ Principales fonctionnalités du bot
 * * Hypertextes
 * Interface utilisateur ergonomique
 * Expérience utilisateur fluide et agréable
-* Informations sur la date et l'heure en temps réel (Taper date ou temps)
+* Informations sur la date et l'heure en temps réel 
 * Intégration de RiveScript _Toujours en cours de devéloppement_
 
 Divers
@@ -112,13 +88,12 @@ Divers
 * Delay: possibilté de mettre des délais pour les réponses
 * bot_image : Possibilté de donner un logo ou une icone au bot. Cette image va se placer à gauche des interventions du bot
 * Intégration d'emojis via https://getemoji.com
-* Intégration d'icones : IonIcons, FontAwesome, FlatIcons,... 
+* Intégration d'icones : FontAwesome, FlatIcons,... 
   
 A venir 🚀
-* API Météo _En cours d'implémentation_
-* API de nouvelles (Google News)  _En cours d'implémentation_
-* Inclurer plus de langues (surtout africaines)
-* Page Admin de paramétrage et visualisation des statistiques et des différentes données récoltées
+* API de nouvelles (intrégration du flux RSS du site web directement)  _En cours d'implémentation_
+* Inclurer plus de langues africaines
+* Page d'administration et de paramétrage pour la visualisation des statistiques et des différentes données récoltées
   
 Ultime Goal 
 * Commande vocale (en intégrant DialogFlow ou MicroSoft BotFramework) 🤞🏾
@@ -151,7 +126,7 @@ _Refferez-vous aux documentations officielles de chaque outils pour plus de dét
 
 1. Cloner le projet
    ```sh
-   git clone https://github.com/a-dera/cdabot.git
+   git clone https://github.com/a-dera/avfabot.git
    ```
 2. Installer les packages
    ```sh
@@ -165,7 +140,7 @@ _Refferez-vous aux documentations officielles de chaque outils pour plus de dét
 
 ## Usage
 
-Selon vos besoins, modiefiez les fichiers [core](https://github.com/a-dera/cdabot/assets/core)
+Selon vos besoins, modifiez les fichiers dans le dossier [core](https://github.com/a-dera/avfabot/assets/core)
 
 
 <!-- CONTRIBUTING -->
@@ -192,25 +167,23 @@ Distributed under the MIT License. See `LICENSE` for more information. 🔓
 <!-- CONTACT -->
 ## Contributeurs
 
-* **[Amédée DERA](https://github.com/a-dera)** - [@P_A_DERA](https://twitter.com/P_A_DERA) 💻 ⚙️ 🪄 📝 
-* **[Elisée GUIRE](https://github.com/guireelisee/)** - [@GuireElisee](https://twitter.com/GuireElisee) 💻 📝  🔍
+* **[Amédée DERA](https://github.com/a-dera)** - [@P_A_DERA](https://twitter.com/P_A_DERA) 🔍 💻 ⚙️ 📝 
 
-Liste de tous les contributeurs --> [contributors](https://github.com/a-dera/cdabot/contributors) !
 
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/a-dera/cdabot.svg?style=for-the-badge
-[contributors-url]: https://github.com/a-dera/cdabot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/a-dera/cdabot.svg?style=for-the-badge
-[forks-url]: https://github.com/a-dera/cdabot/network/members
-[stars-shield]: https://img.shields.io/github/stars/a-dera/cdabot.svg?style=for-the-badge
-[stars-url]: https://github.com/a-dera/cdabot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/a-dera/cdabot.svg?style=for-the-badge
-[issues-url]: https://github.com/a-dera/cdabot/issues
-[license-shield]: https://img.shields.io/github/license/a-dera/cdabot.svg?style=for-the-badge
-[license-url]: https://github.com/a-dera/cdabot/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/a-dera/avfabot.svg?style=for-the-badge
+[contributors-url]: https://github.com/a-dera/avfabot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/a-dera/avfabot.svg?style=for-the-badge
+[forks-url]: https://github.com/a-dera/avfabot/network/members
+[stars-shield]: https://img.shields.io/github/stars/a-dera/avfabot.svg?style=for-the-badge
+[stars-url]: https://github.com/a-dera/avfabot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/a-dera/avfabot.svg?style=for-the-badge
+[issues-url]: https://github.com/a-dera/avfabot/issues
+[license-shield]: https://img.shields.io/github/license/a-dera/avfabot.svg?style=for-the-badge
+[license-url]: https://github.com/a-dera/avfabot/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
 
