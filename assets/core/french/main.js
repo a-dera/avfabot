@@ -1,6 +1,7 @@
 document.write("<script language='JavaScript' src='assets/core/french/chitchat.js'></script>");
 document.write("<script language='JavaScript' src='assets/core/french/tag.js'></script>");
 document.write("<script language='JavaScript' src='core/rivescript.js'></script>");
+
 var mainFrench = function() {
   botui.action.button({
     delay: 500,
@@ -84,13 +85,17 @@ var presentationFrench = function() {
     botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-    content: 'Fondée en 1990, l’Agence de la Vulgarisation et de la Formation Agricoles, connue sous l’acronyme AVFA,  est un établissement public à caractère administratif doté de la personnalité civile et de l’autonomie financière. Elle est placée sous la tutelle administrative et financière du Ministère de l’Agriculture, des Ressources Hydrauliques et de la Pêche. La tutelle pédagogique et technique de l’AVFA est assurée conjointement par le Ministère de la Formation Professionnelle et de l’Emploi et le Ministère de l’Agriculture, des Ressources Hydrauliques et de la Pêche.'
+    content: 'Fondée en 1990, <strong>l’Agence de la Vulgarisation et de la Formation Agricoles</strong>, connue sous l’acronyme <u>AVFA</u>,\
+      est un établissement public à caractère administratif doté de la personnalité civile et de l’autonomie financière.\
+       Elle est placée sous la tutelle administrative et financière du Ministère de l’Agriculture, des Ressources Hydrauliques\
+        et de la Pêche. La tutelle pédagogique et technique de l’AVFA est assurée conjointement par le Ministère de la Formation\
+         Professionnelle et de l’Emploi et le Ministère de l’Agriculture, des Ressources Hydrauliques et de la Pêche.'
       }).then(function () {
     return botui.action.button({
-    delay: 1000,
+    delay: 2000,
     action: [{
       text: 'Nos missions',
-      _icon: 'hat',
+      _icon: 'rocket',
       get icon() {
         return this._icon;
       },
@@ -154,7 +159,7 @@ var missionsFrench = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
-    content: '<span>L’AVFA veille à la réalisation des programmes de formation et de vulgarisation agricoles prévus dans les plans de développement économique et social à travers:<span>\
+    content: '<span>L’AVFA veille à la réalisation des programmes de formation et de vulgarisation agricoles prévus dans les plans de développement économique et social à travers:</span>\
               <ul><li>la contribution à la conception et à la mise en œuvre de la politique nationale en matière de vulgarisation et de formation professionnelle dans les secteurs de l’agriculture et de la pêche,</li>\
                   <li>l’élaboration, le suivi et l’évaluation des programmes de vulgarisation et de formation professionnelle dans les secteurs de l’agriculture et de la pêche,</li>\
                   <li>la coordination et la complémentarité entre les établissements de formation professionnelle dans les secteurs de l’agriculture et de la pêche,</li>\
@@ -252,21 +257,28 @@ var contactFrench = function() {
         type:'html',
         content: '<div class="control">\
         <div class="tags has-addons">\
-          <span class="tag is-primary is-light">Adresse: 30, rue Alain Savary, 1002 Tunis, Tunisie</span>\
+          <span class="tag is-primary is-light">Adresse: 30, rue Alain Savary,</span>\
+          <span class="tag is-primary is-light"> 1002 Tunis, Tunisie</span>\
           </div></div><br>\
           <span class="tag is-info is-rounded">Email : contact.avfa@iresa.agrinet.tn</span><br><br>\
-          <span class="tag is-info is-rounded">Téléphone : (+216) 71.789.025 / 71.796.915 / 71.797.086</span>'
+          <span class="tag is-warning is-rounded">Téléphone : (+216) 71.789.025 /</span>\
+          <span class="tag is-warning is-rounded"> 71.796.915 / 71.797.086</span>'
       }).then(function () {
       return botui.message.bot({
         delay: 1000,
         loading: true,
         type:'html',
-        content: '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/AVFA:Agence+de+la+vulgarisation+et+de+la+formation+agricoles/@36.828386,10.184197,14z/data=!4m5!3m4!1s0x0:0xca35afeec5e339b1!8m2!3d36.8283311!4d10.1842937?hl=fr" title="AVFA:Agence de la vulgarisation et de la formation agricoles" aria-label="AVFA:Agence de la vulgarisation et de la formation agricoles"></iframe>'
+        content: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.5882197253327!2d10.1841974!3d36.828386200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca35afeec5e339b1!2sAVFA%3AAgence%20de%20la%20vulgarisation%20et%20de%20la%20formation%20agricoles!5e0!3m2!1sfr!2sbf!4v1654612264463!5m2!1sfr!2sbf" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        // content: '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"\
+        //  src="https://www.google.com/maps/place/AVFA:Agence+de+la+vulgarisation+et+de+la+formation+agricoles/@36.828386,10.184197,14z/data=!4m5!3m4!1s0x0:0xca35afeec5e339b1!8m2!3d36.8283311!4d10.1842937?hl=fr;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"\
+        //   title="AVFA:Agence de la vulgarisation et de la formation agricoles" aria-label="AVFA:Agence de la vulgarisation et de la formation agricoles"></iframe>'
       });
     })/*.then(function () {
       return botui.message.bot({
         delay: 1000,
         loading: true,
+                 src="https://www.google.com/maps/place/AVFA:Agence+de+la+vulgarisation+et+de+la+formation+agricoles/@36.828386,10.184197,14z/data=!4m5!3m4!1s0x0:0xca35afeec5e339b1!8m2!3d36.8283311!4d10.1842937?hl=fr"\
+
         type:'embed',
         content: 'https://maps.google.com/maps?q=Group%20Famib%20-%20%C3%A0%20la%20hauteur%20de%20vos%20attentes&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" '
       });
