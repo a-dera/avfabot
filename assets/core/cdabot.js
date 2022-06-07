@@ -17,7 +17,7 @@ document.write("<script language='JavaScript' src='assets/core/pular/main.js'></
     }).then(function () {
       return botui.message.bot({
         delay: 500,
-        content: 'Je peux vous aider à trouver plus rapidement ce que vous chercher'
+        content: 'Je peux vous aider à trouver plus rapidement et précisement l\'information que vous rechercher. 😀'
       });
     }).then(function () {
       return start(); // fonction de démarrage: sélection de la langue
@@ -44,17 +44,94 @@ var start = function(){
           },
           value: 'english'
         }, 
-        // {
-        //   text: 'Pular',
-        //   _icon: 'check',
-        //   get icon() {
-        //     return this._icon;
-        //   },
-        //   set icon(value) {
-        //     this._icon = value;
-        //   },
-        //   value: 'pular'
-        // },
+        {
+          text: 'Arabe',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'arabe'
+        },
+        {
+          text: 'Wolof',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'wolof'
+        },
+        {
+          text: 'Swahili',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'swahili'
+        },
+        {
+          text: 'Tamqsheq',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'tamasheq'
+        },
+        {
+          text: 'Bambara',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'bambara'
+        },
+        {
+          text: 'Dioula',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'dioula'
+        },
+        {
+          text: 'Mooré',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'moore'
+        },
+        {
+          text: 'Pular',
+          _icon: 'check',
+          get icon() {
+            return this._icon;
+          },
+          set icon(value) {
+            this._icon = value;
+          },
+          value: 'pular'
+        },
         {
           text: 'Continuer en Français',
           _icon: 'check',

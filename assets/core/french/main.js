@@ -5,7 +5,7 @@ var mainFrench = function() {
   botui.action.button({
     delay: 500,
     action: [{
-      text: 'En savoir plus sur l\'AGENCE DE LA VULGARISATION ET DE LA FORMATION AGRICOLES',
+      text: 'En savoir plus sur l\'Agence AVFA',
       _icon: 'info',
       get icon() {
         return this._icon;
@@ -26,7 +26,7 @@ var mainFrench = function() {
       value: 'service'
     },{
       text: 'Partenariats & Coopérations',
-      _icon: 'rocket',
+      _icon: 'refresh',
       get icon() {
         return this._icon;
       },
@@ -34,6 +34,16 @@ var mainFrench = function() {
         this._icon = value;
       },
       value: 'coop'
+    },{
+      text: 'Actualités',
+      _icon: 'file',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'actu'
     },{
       text: 'Je ne trouve pas ce que je cherche',
       _icon: 'search',
@@ -56,6 +66,8 @@ var mainFrench = function() {
         serviceFrench(); 
       } else if(res.value == 'coop') {
         cooperationFrench(); 
+      } else if(res.value == 'actu') {
+        actualiteFrench(); 
       } else if(res.value == 'search') {
         chitchatFrench(); 
       } else {
@@ -381,6 +393,70 @@ var cooperationFrench = function() {
  delay: 1000,
  action: [{
    text: 'Priorités de l\'AVFA',
+   _icon: 'question',
+   get icon() {
+     return this._icon;
+   },
+   set icon(value) {
+     this._icon = value;
+   },
+   value: 'priorite'
+ }, {
+   text: 'Conventions nationales et internationales',
+   _icon: 'question',
+   get icon() {
+     return this._icon;
+   },
+   set icon(value) {
+     this._icon = value;
+   },
+   value: 'convention'
+ },{
+  text: 'Projets de coopération',
+  _icon: 'list',
+  get icon() {
+    return this._icon;
+  },
+  set icon(value) {
+    this._icon = value;
+  },
+  value: 'projet'
+},{
+  text: 'Programmes d\'appui',
+  _icon: 'list',
+  get icon() {
+    return this._icon;
+  },
+  set icon(value) {
+    this._icon = value;
+  },
+  value: 'appui'
+},{
+     text: 'Retour',
+     icon: 'angle-left',
+     value: 'skip'
+   }]
+}).then(function (res) {
+   if(res.value == 'priorite') {
+     commentFrench();
+   } else if(res.value == 'convention') {
+     pourquoiFrench(); 
+   } else if(res.value == 'projet') {
+    conditionsFrench(); 
+  } else if(res.value == 'appui') {
+    conditionsFrench(); 
+  } else {
+     mainFrench(); 
+   }
+});
+
+}
+
+var cooperationFrench = function() {
+  botui.action.button({
+ delay: 1000,
+ action: [{
+   text: 'Actualités',
    _icon: 'question',
    get icon() {
      return this._icon;
