@@ -6,17 +6,17 @@ document.write("<script language='JavaScript' src='assets/core/english/main.js'>
 document.write("<script language='JavaScript' src='assets/core/pular/main.js'></script>");
 
   botui.message.bot({
-    content: 'Bonjour 👋!'
+    content: 'Bonjour 👋! Je suis agrobot🌱'
   }).then(function () {
         Vue.use(Toasted)
-        Vue.toasted.show('<div class="control"><div class="tags has-addons"><span class="tag is-primary is-light">AVFA-BOT</span><span class="tag is-info is-light">V0.1.6-beta.1</span></div></div><span class="tag is-info is-rounded">Proposé par Amédée DERA<span>',{
+        Vue.toasted.show('<div class="control"><div class="tags has-addons"><span class="tag is-primary is-light">AgroBot</span><span class="tag is-info is-light">V0.4.9-beta.3</span></div></div><span class="tag is-info is-rounded">Proposé par Amédée DERA<span>',{
             theme: "outline", 
             position: "top-center", 
             duration : 5000
         });
     }).then(function () {
       return botui.message.bot({
-        delay: 500,
+        delay: 5000,
         content: 'Je peux vous aider à trouver plus rapidement et précisement l\'information que vous rechercher. 😀'
       });
     }).then(function () {
@@ -28,7 +28,7 @@ document.write("<script language='JavaScript' src='assets/core/pular/main.js'></
 var start = function(){
   botui.message.bot({
     loading:true,
-    delay: 100,
+    delay: 1000,
     content: 'Sélectionner une langue pour commencer',
   })
     .then(function () {

@@ -400,7 +400,7 @@ var cooperationFrench = function() {
  delay: 1000,
  action: [{
    text: 'Priorités de l\'AVFA',
-   _icon: 'question',
+   _icon: 'star',
    get icon() {
      return this._icon;
    },
@@ -410,7 +410,7 @@ var cooperationFrench = function() {
    value: 'priorite'
  }, {
    text: 'Conventions nationales et internationales',
-   _icon: 'question',
+   _icon: 'list',
    get icon() {
      return this._icon;
    },
@@ -445,13 +445,93 @@ var cooperationFrench = function() {
    }]
 }).then(function (res) {
    if(res.value == 'priorite') {
-     commentFrench();
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> Voir les priorités en détails </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Retour',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationFrench();
+    } else{
+      cooperationFrench();
+    }
+    });
    } else if(res.value == 'convention') {
-     pourquoiFrench(); 
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> Voir les conventions en détails </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Retour',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationFrench();
+    } else{
+      cooperationFrench();
+    }
+    });
    } else if(res.value == 'projet') {
-    conditionsFrench(); 
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> En savoir plus sur les projets de coopérations </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Retour',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationFrench();
+    } else{
+      cooperationFrench();
+    }
+    });
   } else if(res.value == 'appui') {
-    conditionsFrench(); 
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> Voir les programmes d\'appui en détails </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Retour',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationFrench();
+    } else{
+      cooperationFrench();
+    }
+    });
   } else {
      mainFrench(); 
    }
@@ -459,66 +539,67 @@ var cooperationFrench = function() {
 
 }
 
-var cooperationFrench = function() {
-  botui.action.button({
- delay: 1000,
- action: [{
-   text: 'Actualités',
-   _icon: 'question',
-   get icon() {
-     return this._icon;
-   },
-   set icon(value) {
-     this._icon = value;
-   },
-   value: 'priorite'
- }, {
-   text: 'Conventions nationales et internationales',
-   _icon: 'question',
-   get icon() {
-     return this._icon;
-   },
-   set icon(value) {
-     this._icon = value;
-   },
-   value: 'convention'
- },{
-  text: 'Projets de coopération',
-  _icon: 'list',
-  get icon() {
-    return this._icon;
-  },
-  set icon(value) {
-    this._icon = value;
-  },
-  value: 'projet'
-},{
-  text: 'Programmes d\'appui',
-  _icon: 'list',
-  get icon() {
-    return this._icon;
-  },
-  set icon(value) {
-    this._icon = value;
-  },
-  value: 'appui'
-},{
-     text: 'Retour',
-     icon: 'angle-left',
-     value: 'skip'
-   }]
-}).then(function (res) {
-   if(res.value == 'priorite') {
-     commentFrench();
-   } else if(res.value == 'convention') {
-     pourquoiFrench(); 
-   } else if(res.value == 'projet') {
-    conditionsFrench(); 
-  } else if(res.value == 'appui') {
-    conditionsFrench(); 
-  } else {
-     mainFrench(); 
-   }
-});
+var actualiteFrench = function() {
+  botui.message.bot({
+    delay: 50,
+    content: '📜 Patientez pendant que je vous charge les dernières actualités ⚡️'
+  });
+  botui.message.bot({
+    delay: 5000,
+    loading: true,
+    type:'html',
+    content: '<ul><li><strong>Consultation pour l’élaboration d’une analyse du marché des espèces autochtones à hautes valeurs nutrauceutrique et de santé</strong>\
+                  <br>\
+                  <br>\
+                  <span>L’Agence de la Vulgarisation et de la Formation Agricoles, dans le cadre du projet “Valorisation des espèces végétales autochtones siciliennes et tunisiennes avec un intérêt nutritif et bon pour la santé” ESPAS, fait appel à une consultation 02/2021 pour la sélection d’un bureau d’étude pour l’élaboration d’une analyse du marché des espèces autochtones à hautes […]</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-pour-lelaboration-dune-analyse-du-marche-des-especes-autochtones-a-hautes-valeurs-nutrauceutrique-et-de-sante/" target="_blank"> Lire la suite </a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+                  \
+                  <li><strong>Consultation pour la sélection une agence événementielle ou société spécialisée en événementielle</strong>\
+                  <br>\
+                  <br>\
+                  <span>L’Agence de la Vulgarisation et de la Formation Agricoles, dans le cadre du projet “Valorisation des espèces végétales autochtones siciliennes et tunisiennes avec un intérêt nutritif et bon pour la santé” ESPAS, fait appel à une consultation 04/2021 pour la sélection une agence événementielle ou société spécialisée en événementielle (télécharger pdf)</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-pour-la-selection-une-agence-evenementielle-ou-societe-specialisee-en-evenementielle/" target="_blank"> Lire la suite </a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+                  \
+                  <li><strong>Consultation pour la sélection d’un prestataire de service pour l’assistance à la coordination du projet “ESPAS”</strong>\
+                  <br>\
+                  <br>\
+                  <span>L’Agence de la Vulgarisation et de la Formation Agricoles, dans le cadre du projet “Valorisation des espèces végétales autochtones siciliennes et tunisiennes avec un intérêt nutritif et bon pour la santé” ESPAS, fait appel à une consultation 02/2021 pour la sélection d’un prestataire de service pour l’assistance à la coordination du projet (télécharger pdf)</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-02-2021-pour-la-selection-dun-prestataire-de-service-pour-lassistance-a-la-coordination-du-projet-espas/" target="_blank"> Lire la suite </a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+              </ul>'
+      }).then(function () {
+    return  botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Retour',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    mainFrench();
+  } else{
+    mainFrench();
+  }
+  });
 
 }
