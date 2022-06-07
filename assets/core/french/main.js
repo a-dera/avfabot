@@ -347,8 +347,7 @@ var conseilFrench = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
-    content: '<ul><li>L’adhésion au Cluster Digital Africa se fait à travers une demande préalable au moyen d’un formulaire de demande d’adhésion. Celle-ci est conditionnée par l\'acceptation du Bureau exécutif du cluster digital Africa. Et est valable pour l’année civile en cours. Après l’acceptation par la structure de validation des candidatures, le postulant est automatiquement considéré comme membre du cluster tout en acceptant les termes de la charte du Cluster Digital Africa. </li>\
-                  <li><strong>L’adhésion au Cluster Digital Africa implique: </strong><br> L’engagement à respecter les Statuts de l’organisme. Si toutefois un membre ne souhaite pas/plus renouveler son adhésion au réseau, il devra en informer le Cluster (par courrier ou par email) dans un délai d’un mois (30jours). </li></ul>'
+    content: '<a href="https://www.avfa.agrinet.tn/conseil-agricole/" target="_blank"> Cliquer ici pour en savoir plus. </a>'
       }).then(function () {
     return botui.action.button({
       delay: 1000,
@@ -373,17 +372,13 @@ var formationFrench = function() {
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-    content: '<ul><li><span class="icon"><i class="fas fa-minus"></i></span>Donnez une visibilité régionale, nationale et internationale à votre entreprise.</li>\
-                  <li><span class="icon"><i class="fas fa-minus"></i></span>Bénéficiez de services sur-mesure et de formations spécialisées.</li>\
-                  <li><span class="icon"><i class="fas fa-minus"></i></span>Accédez à des partenaires financiers.</li>\
-                  <li><span class="icon"><i class="fas fa-minus"></i></span>Accompagnement et renforcement de la croissance dans votre entreprise.</li>\
-                  <li><span class="icon"><i class="fas fa-minus"></i></span>Soyez plus proche de vos collaborateurs partout en Afrique.</li></ul>'
+    content: '<a href="https://www.avfa.agrinet.tn/formation/" target="_blank"> Cliquer ici pour en savoir plus. </a>'
       }).then(function () {
     return botui.action.button({
       delay: 1000,
       action: [{
-        text: 'Voir les conditions d\'adhésion',
-        value: 'conditions'
+        text: 'Conseil agricol',
+        value: 'conseil'
       },{
         text: 'Retour',
         icon: 'angle-left',
@@ -392,8 +387,8 @@ var formationFrench = function() {
     ]
     })
   }).then(function (res) {
-  if(res.value == 'conditions') {
-    conditionsFrench();
+  if(res.value == 'conseil') {
+    conseilFrench();
   } else{
     serviceFrench();
   }
