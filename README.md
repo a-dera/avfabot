@@ -53,6 +53,11 @@
 
 
 <!-- ABOUT THE PROJECT -->
+## Concept de la compétition
+
+La compétition consiste à monter un Chatbot dédié pour la plateforme de L’Agence de la Vulgarisation et de la Formation Agricoles (AVFA) «https://www.avfa.agrinet.tn», un assistant client virtuel qui permet de répondre aux questions des internautes  facilement, 24h/24 et 7j/7 afin de les aider à profiter pleinement des avantages des offres de l’AVFA et à résoudre rapidement les problèmes techniques qu’ils pourraient rencontrer sur le portail. 
+
+Le Chatbot doit utiliser les langages courants sur les réseaux sociaux en Afrique en parlant l’anglais et le français.
 
 ## Outils de conception
 
