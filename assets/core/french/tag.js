@@ -23,5 +23,18 @@ var localisationTags = [
 
 var salutationsTags = [
   "salut",
+  "Salut",
+  "Bonjour",
+  "Hello",
+  "Salutations",
+  "bonjour"
+];
+
+var salutations2Tags = [
+  "comment allez-vous?",
+  "tu bas bien?",
+  "je vais bien et toi?",
+  "Hello",
+  "Salutations",
   "bonjour"
 ];

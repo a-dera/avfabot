@@ -9,7 +9,7 @@ var chitchatFrench = function() {
         return botui.message.bot({
             delay: 500,
             loading: true,
-            content: 'Je suis amusant 🙂 et convivial 😌'
+            content: 'Je suis amusant 🙂 et convivial ✨'
         })
     }).then(function () {
         return botui.message.bot({
@@ -63,7 +63,7 @@ var start_bot = function() {
         date();
       } else if (localisationTags.includes(res.value)){
         ville();
-      } else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'Bonjour' || res.value == 'hello' || res.value == 'Salut'){
+      }/* else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'Bonjour' || res.value == 'hello' || res.value == 'Salut'){
         return botui.message
           .bot({
             delay: 500,
@@ -72,15 +72,17 @@ var start_bot = function() {
           .then(function () {
             return start_bot();
           });
-      } else if (salutationsTags.includes(res.value)){
+      }*/ else if (salutationsTags.includes(res.value)){
         salutations();
-      }  else if (res.value == 'quitter' || res.value == 'q'){
+      }  else if (salutations2Tags.includes(res.value)){
+        salutations2();
+      } else if (res.value == 'quitter' || res.value == 'q'){
         mainFrench();
       }  else {
         return botui.message
           .bot({
             delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔'
+            content: 'Oups,😟 je n\'ai pas bien compris votre requête 🤔'
           })
           .then(function () {
             return start_bot();
@@ -92,11 +94,20 @@ var start_bot = function() {
 var salutations = function() {  
  botui.message.bot({ 
     delay: 500,
-    content: 'Bonjour'
+    content: 'Bonjour, comment allez vous?'
   }).then(function () { 
     return start_bot()
   })  ; 
 }
+
+var salutations2 = function() {  
+  botui.message.bot({ 
+     delay: 500,
+     content: 'Je vais très bien'
+   }).then(function () { 
+     return start_bot()
+   })  ; 
+ }
 
 
 
@@ -123,7 +134,10 @@ var date = function() {
     botui.message.bot({ 
         delay: 500,
         type: 'html',
-        content:'<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/#map=18"'+latitude+'"/"'+longitude+'"></iframe>'
+        content:'<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"\
+         src="https://www.openstreetmap.org/export/embed.html?bbox=-1.531047821044922%2C12.369289247783282%2C'+latitude+'/'+longitude+'&amp;layer=mapnik"style="border: 1px solid black"></iframe><br/><small>\
+        <a href="https://www.openstreetmap.org/#map=18/'+latitude+'/'+longitude+'">Agrandir</a></small>'
+        //<iframe src="https://www.openstreetmap.org/#map=18'+latitude+'/'+longitude+'"></iframe>'
         /* 
         * api pour récuperer les données de façon embed 'https://www.openstreetmap.org/#map='+latitude+'/'+longitude
         * api pour récuperer le site en totalité 'https://nominatim.geocoding.ai/reverse.html?lat='+latitude+'&lon='+longitude+'&zoom=18&format=jsonv2'
