@@ -36,6 +36,7 @@ var start_bot = function() {
 
       //if( ) { 
       //for (words in mots_cles) {var matches = words.match(dateTags);}
+      // TODO:Trouver une fonction qui recupère la reponse sous format miniscules uniquement
       if (dateTags.includes(res.value)){
         date();
       } else if (localisationTags.includes(res.value)){
@@ -63,6 +64,20 @@ var start_bot = function() {
       }  else if (res.value == '*vision'){
         visionFrench();
       } else if (res.value == 'quitter' || res.value == '*q'){
+        mainFrench();
+      } else if (conseillerTags.includes(res.value)){
+        conseillerFrench();
+      } else if (vulgarisationTags.includes(res.value)){
+        vulgarisationFrench();
+      } else if (organisationTags.includes(res.value)){
+        organisationFrench();
+      } else if (subsTags.includes(res.value)){
+        subsFrench();
+      } else if (localisationTags.includes(res.value)){
+        mainFrench();
+      } else if (localisationTags.includes(res.value)){
+        mainFrench();
+      } else if (localisationTags.includes(res.value)){
         mainFrench();
       }  else {
         return botui.message
@@ -181,4 +196,87 @@ var date = function() {
     
   }
     
+ }
+
+
+ var conseillerFrench = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    type:'html',
+    content: 'Vous pouvez trouver un conseiller agricole en cliquant <a href="https://www.avfa.agrinet.tn/conseil-agricole/conseil-prive-et-professionnel/" target="_blank">  ici</a>\
+              Ou demander un conseil agricole en remplissant <a href="https://www.avfa.agrinet.tn/conseil-agricole/conseil-etatique/" target="_blank"> ce formulaire.</a> '
+   }).then(function () { 
+     return botui.message.bot({ 
+      delay: 3000,
+      loading: true,
+      type:'html',
+      content: '<strong>Pour avoir un conseil en agriculture, s’adresser aux cellules territoriales de vulgarisation (CTV),\
+                aux centres de rayonnement agricole (CRA), au centre technique spécialisé ou à un conseiller privé (service payant)</strong>.\
+                <br><br>\
+                <strong>Pour avoir un conseil dans les domaines de la pêche et l’aquaculture, s’adresser aux centres de formation professionnelle\
+                de pêche ou au centre technique spécialisé. </strong>'
+     }).then(function () { 
+       return start_bot()
+      })
+    }) ; 
+ }
+
+ var vulgarisationFrench = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    type:'html',
+    content: '<a href="https://www.avfa.agrinet.tn/conseil-agricole/conseil-prive-et-professionnel/" target="_blank"> Télécharger la brochure </a>'
+   }).then(function () { 
+     return start_bot()
+   })  ; 
+ }
+
+ var organisationFrench = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    type:'html',
+    content: '<ul>Les organisations professionnelles agricoles fournissent différents services à leurs adhérents:<br>\
+              •	le groupement des achats et la négociation des prix,<br>\
+              •	la mutualisation des moyens et des équipements,<br>\
+              •	l’accès aux crédits, aux subventions et aux encouragements de l’état, <br>\
+              •	la commercialisation des produits à des prix avantageux, <br>\
+              •	l’accès aux services de conseil et de formation agricole. <br>\
+              Les adhérents aux Sociétés Mutuelles de Services Agricoles (SMSA) peuvent jouir en plus des bénéfices selon l’importance de leurs actions. <br>\
+              </ul>'
+   }).then(function () { 
+     return start_bot()
+   })  ; 
+ }
+
+
+ var subsFrench = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    type:'html',
+    content: 'Le fonds assure l’indemnisation des agriculteurs et pêcheurs adhérents contre les dégâts \
+              agricoles suite aux calamités naturelles telles que les inondations, les tempêtes, les vents, la sécheresse,\
+              les chutes de neige et la gelée. Le taux de dédommagement destiné aux agriculteurs est dans la limite de 60%\
+              des dégâts au cas où ces derniers ont dépassé les 25%. (A vérifier)\
+              <br><br>\
+              Pour plus de renseignement visiter le <a href="https://ctama.com.tn/" target="_blank"> site de la CTAMA  </a>'
+   }).then(function () { 
+     return start_bot()
+   })  ; 
+ }
+
+ var organisationFrench = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    type:'html',
+    content: '<ul>Les organisations professionnelles agricoles fournissent différents services à leurs adhérents:<br>\
+              •	le groupement des achats et la négociation des prix,<br>\
+              •	la mutualisation des moyens et des équipements,<br>\
+              •	l’accès aux crédits, aux subventions et aux encouragements de l’état, <br>\
+              •	la commercialisation des produits à des prix avantageux, <br>\
+              •	l’accès aux services de conseil et de formation agricole. <br>\
+              Les adhérents aux Sociétés Mutuelles de Services Agricoles (SMSA) peuvent jouir en plus des bénéfices selon l’importance de leurs actions. <br>\
+              </ul>'
+   }).then(function () { 
+     return start_bot()
+   })  ; 
  }
