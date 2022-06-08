@@ -15,7 +15,7 @@ var chitchatFrench = function() {
         return botui.message.bot({
             delay: 500,
             loading: true,
-            content: 'Pour quitter ce mode, taper \"quitter\" ou simplement \"q\" '
+            content: 'Pour quitter ce mode, taper \"quitter\" ou simplement \"*q\". Taper \"*cmd\" pour voir la liste complète des commandes '
         })
     }).then(function () { 
             return start_bot()
@@ -23,30 +23,7 @@ var chitchatFrench = function() {
       
      
 } 
-/*var start_bot = function() {  
-  botui.action.text({
-    delay: 1000,
-    action: {
-      icon: 'search',
-      placeholder: 'Taper quelque chose ✍️...'
-    }
-    }).then(function (res) {
-      if(res.value == 'quitter' || res.value == 'q') {
-      mainFrench();
-    } else if(res.value == 'date' || res.value == 'date') {
-      date();
-    }  else if(res.value == 'ville' || res.value == 'position') {
-      ville();
-    } else  {
-         return botui.message.bot({ 
-            delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔'
-          }).then(function () { 
-            return start_bot()
-          })      
-        }
-  });
-}*/
+
 var start_bot = function() {  
   botui.action.text({
     delay: 1000,
@@ -63,20 +40,29 @@ var start_bot = function() {
         date();
       } else if (localisationTags.includes(res.value)){
         ville();
-      }/* else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'Bonjour' || res.value == 'hello' || res.value == 'Salut'){
-        return botui.message
-          .bot({
-            delay: 500,
-            content: 'Bonjour, comment allez vous?'
-          })
-          .then(function () {
-            return start_bot();
-          });
-      }*/ else if (salutationsTags.includes(res.value)){
+      } else if (salutationsTags.includes(res.value)){
         salutations();
       }  else if (salutations2Tags.includes(res.value)){
         salutations2();
-      } else if (res.value == 'quitter' || res.value == 'q'){
+      }  else if (res.value == '*cmd'){
+        commandes();
+      }  else if (res.value == '*contact'){
+        contactFrench();
+      } else if (res.value == '*services'){
+        serviceFrench();
+      } else if (res.value == '*missions'){
+        missionsFrench();
+      } else if (res.value == '*valeurs'){
+        valeursFrench();
+      } else if (res.value == '*cooperations'){
+        cooperationFrench();
+      } else if (res.value == '*presentation'){
+        presentationFrench();
+      } else if (res.value == '*actualites' || res.value == '*actu'){
+        actualiteFrench();
+      }  else if (res.value == '*vision'){
+        visionFrench();
+      } else if (res.value == 'quitter' || res.value == '*q'){
         mainFrench();
       }  else {
         return botui.message
@@ -109,6 +95,31 @@ var salutations2 = function() {
    })  ; 
  }
 
+ var commandes = function() {  
+  botui.message.bot({ 
+     delay: 500,
+     content: 'Liste des commandes'
+   }).then(function () { 
+    return botui.message.bot({ 
+      delay: 500,
+      loading: true,
+      type:'html',
+      content: '<ul><li>Quitter: *q</li>\
+                  <li>Liste des commande: *cmd</li>\
+                  <li>Contact: *contact</li>\
+                  <li>Services: *services</li>\
+                  <li>Missions: *missions</li>\
+                  <li>Valeurs: *valeurs</li>\
+                  <li>Actualités: *actualités ou *actu</li>\
+                  <li>Vision: *vision</li>\
+                  <li>Coopérations: *coopérations</li>\
+                  <li><Presentation: *presentation</li>\
+                  </ul>'
+    })
+  }).then(function () { 
+     return start_bot()
+   }); 
+ }
 
 
 var dateJour = new Date()
@@ -120,10 +131,6 @@ var date = function() {
     return start_bot()
   })  ;    
  }
-
- 
-
-  
 
 
  var ville = function() {  
@@ -175,29 +182,3 @@ var date = function() {
   }
     
  }
-
-//--------------------------------------------------------------------------
-/* else  {
-         return botui.message.bot({ 
-            delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
-          }).then(function () { 
-            return start_bot()
-          })      
-        }*/
-
-/**
- * else  {
-        bot.reply("local-user", res).then(function (reply) {
-            botReply(reply);
-          }).then(function () { 
-            return function botReply(res) {
-              botui.message.bot({ 
-                content: '' + res.value
-              })
-          }.then(function () { 
-            return start_bot()
-          }) 
-        }) 
-      }
- */
