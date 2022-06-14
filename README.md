@@ -73,37 +73,47 @@ Ce bot a été conçu avec un lot d'outils funs et performants
 
 ## Fonctionnalités
 
-Principales fonctionnalités du bot 
+### Principales fonctionnalités du bot 
 
 * Deux niveaux de navigations : 
-* * Navigation guidée : Le bot guide l'utilisateur de façon intuitive
-* * Navigation libre : le bot répond aux questions de l'utilisateur à travers une interaction directe
+  * Navigation guidée : Le bot guide l'utilisateur de façon intuitive
+  * Navigation libre : le bot répond aux questions de l'utilisateur à travers une interaction directe
 * Interraction multimédia
-* * Textes
-* * Images
-* * Embed : Vidéo intégrée, balise HTML native (iframe, div,...), ...
-* * Hypertextes
+  * Textes
+  * Images
+  * Embed : Vidéo intégrée, balise HTML native (iframe, div,...), ...
+  * Hypertextes
 * Interface utilisateur ergonomique
 * Expérience utilisateur fluide et agréable
 * Informations sur la date et l'heure en temps réel 
+* Informations de géolocalisation
+* Prise en charge de plusieurs langues dont:
+  * Français
+  * Anglais
+  * Arabe 
+  *
 * Intégration de RiveScript _Toujours en cours de devéloppement_
 
-Divers
+### Divers
 * Loading :  chargement des réponses pour donner l'impresion d'une réflexion du bot
 * Delay: possibilté de mettre des délais pour les réponses
 * bot_image : Possibilté de donner un logo ou une icone au bot. Cette image va se placer à gauche des interventions du bot
 * Intégration d'emojis via https://getemoji.com
 * Intégration d'icones : FontAwesome, FlatIcons,... 
+* Principe de clean code
+* Evolutivité 
+* Installation et prise en main simple, facile et rapide
+* Application déjà déployée sur Heroku et accessible!
   
-A venir 🚀
-* API de nouvelles (intrégration du flux RSS du site web directement)  _En cours d'implémentation_
-* Inclurer plus de langues africaines
+### A venir 🚀
+* API de nouvelles (intrégration du flux RSS du site web directement)  _En cours d'implémentation (70%)_
+* Inclurer plus de langues africaines (Wolof, Tamasheq, Bambara...)
 * Page d'administration et de paramétrage pour la visualisation des statistiques et des différentes données récoltées
+* Intégration d'une base de données pour sauvegarder certaines informations suite aux interactions
+* Prise en compte de toutes les Q/R 
   
-Ultime Goal 
+### Ultime Goal 
 * Commande vocale (en intégrant DialogFlow ou MicroSoft BotFramework) 🤞🏾
-
-
 
 
 
