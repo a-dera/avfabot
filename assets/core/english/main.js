@@ -1,10 +1,11 @@
+document.write("<script language='JavaScript' src='assets/core/English/chitchat.js'></script>");
+document.write("<script language='JavaScript' src='assets/core/English/tag.js'></script>");
 
-/*------ -------------Section main--------*/
 var mainEnglish = function() {
   botui.action.button({
-    delay: 1000,
+    delay: 500,
     action: [{
-      text: 'Learn more about Cluster Digital Africa',
+      text: 'Find out more about the AVFA Agency',
       _icon: 'info',
       get icon() {
         return this._icon;
@@ -12,9 +13,9 @@ var mainEnglish = function() {
       set icon(value) {
         this._icon = value;
       },
-      value: 'cda'
+      value: 'avfa'
     }, {
-      text: 'Adhesion',
+      text: 'Services',
       _icon: 'rocket',
       get icon() {
         return this._icon;
@@ -22,9 +23,29 @@ var mainEnglish = function() {
       set icon(value) {
         this._icon = value;
       },
-      value: 'adhesion'
+      value: 'service'
     },{
-      text: 'I do not find what I\'m looking for',
+      text: 'Partnerships & Cooperations',
+      _icon: 'refresh',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'coop'
+    },{
+      text: 'News',
+      _icon: 'file',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'actu'
+    },{
+      text: 'I can\'t find what I\'m looking for',
       _icon: 'search',
       get icon() {
         return this._icon;
@@ -34,246 +55,156 @@ var mainEnglish = function() {
       },
       value: 'search'
     },{
-      text: 'Return',
-      icon: 'angle-left',
-      value: 'skip'
-    }]
-  }).then(function (res) {
-    if(res.value == 'cda') {
-      presentationEnglish();
-    } else if(res.value == 'adhesion') {
-      adhesionEnglish();
-    } else if(res.value == 'search') {
-      chitchatFrench();
-    } else {
-      start();
-    }
-  });
-
-
-}
-
-/*-------------------------------- fin section -----------------------------------*/
-
-
-/*------ -------------Section  Informations générales sur CDA-------*/
-var presentationEnglish = function() {
-
-  botui.message.bot({ // TODO #2 #1 Correction des icones
-    delay: 500,
-    type:'html',
-    content: 'The cluster allows companies to regroup and be represented towards the institutional ecosystem.Adhering the cluster is allowing you to share your experiences & your news with the collective and sometimes develop collective programs.Adhering the cluster is also valuing digital excellence in Africa.'
-  }).then(function () {
-    return botui.action.button({
-      delay: 1000,
-      action: [{
-        text: 'Governance',
-        _icon: 'hat',
-        get icon() {
-          return this._icon;
-        },
-        set icon(value) {
-          this._icon = value;
-        },
-        value: 'gouvernance'
-      }, {
-        text: 'Executive Office',
-        _icon: 'pencil',
-        get icon() {
-          return this._icon;
-        },
-        set icon(value) {
-          this._icon = value;
-        },
-        value: 'bureau'
-      },{
-        text: 'Team',
-        _icon: 'users',
-        get icon() {
-          return this._icon;
-        },
-        set icon(value) {
-          this._icon = value;
-        },
-        value: 'team'
-      },{
         text: 'Return',
         icon: 'angle-left',
         value: 'skip'
       }]
-    }).then(function (res) {
-      if(res.value == 'gouvernance') {
-        gouvernanceEnglish();
-      } else if(res.value == 'bureau') {
-        bureauEnglish();
-      } else if(res.value == 'team') {
-        teamEnglish();
-      } else {
-        mainEnglish();
-      }
-    })
-  });
-
-}
-
-var gouvernanceEnglish = function() {
-  botui.message.bot({
-    delay: 500,
-    type:'html',
-    content: '<ul><li><strong>President </strong>Amadou DIAWARA</li>\
-    <li><strong>Honorary President </strong>Mossadeck BALLY</li>\
-    <li><strong>Honorary President </strong>Mme Mbaranga Gasarabwe</li>\
-    <li><strong>Honorary President </strong>Messaoud Prosper AMOUYAL</li>\
-    <li><strong>Vice-President </strong>Patrick GIVANOVICTH</li>\
-    <li><strong>Honorary Vice-President </strong>Kacem AIYTYALLA</li>\
-    <li><strong>Honorary Vice-President </strong>Balkissa Idé SIDDO</li>\
-    <li><strong>Honorary Vice-President </strong>Diane Malikane Sugira</li>\
-    <li><strong>Honorary Vice-President </strong>Diadié dit Amadou SANKARE</li>\
-    <li><strong>Honorary Vice-President </strong>Alima DIAWARA</li>\
-    <li><strong>Honorary Vice-President </strong>Djénéba GORY</li>\
-    <li><strong>Honorary Vice-President </strong>Mouminatou KANTE/li>\
-    <li><strong>Honorary Vice-President </strong>Fatoumata TRAORE</li><br>\
-    </ul>'
-  }).then(function () {
-    return botui.message.bot({
-      delay: 1000,
-      loading: true,
-      type:'html',
-      content: '<a href="https://clusterdigitalafrica.com/gouvernance/" target="_blank"> More details on governance here</a>'
-    });
-  }).then(function () {
-    return botui.action.button({
-      delay: 1000,
-      action: [{
-        text: 'Return',
-        icon: 'angle-left',
-        value: 'skip'
-      }
-    ]
-  })
-}).then(function (res) {
-  if(res.value == 'skip') {
-    presentationEnglish();
-  } else{
-    presentationEnglish();
-  }
-});
-}
-
-var bureauEnglish = function() {
-  botui.message.bot({
-    delay: 500,
-    type:'html',
-    content: '<ul><li><strong>President </strong>Amadou DIAWARA</li>\
-    <li><strong>General secretary </strong>Karim RAHHAOUI</li>\
-    <li><strong>Treasurer </strong>Mamadou DOUMBIA</li>\
-    <li><strong>General coordinator </strong>Binatou Coulibaly</li>\
-    </ul>'
-  }).then(function () {
-    return botui.action.button({
-      delay: 1000,
-      action: [{
-        text: 'Return',
-        icon: 'angle-left',
-        value: 'skip'
-      }
-    ]
-  })
-}).then(function (res) {
-  if(res.value == 'skip') {
-    presentationEnglish();
-  } else{
-    presentationEnglish();
-  }
-});
-}
-
-var team = function() {
-  botui.message.bot({
-    delay: 1000,
-    loading: true,
-    type:'html',
-    content: '<a href="https://clusterdigitalafrica.com/gouvernance/" target="_blank"> Click to go to the dedicated page </a>'
-  }).then(function () {
-    return botui.action.button({
-      delay: 1000,
-      action: [{
-        text: 'Return',
-        icon: 'angle-left',
-        value: 'skip'
-      }
-    ]
-  })
-}).then(function (res) {
-  if(res.value == 'skip') {
-    presentationEnglish();
-  } else{
-    presentationEnglish();
-  }
-});
-}
-
-
-
-/*------ -------------Section  Renseignement pour adhérer--------*/
-var adhesionEnglish = function() {
-  botui.action.button({
-    delay: 1000,
-    action: [{
-      text: 'How to join ?',
-      _icon: 'question',
-      get icon() {
-        return this._icon;
-      },
-      set icon(value) {
-        this._icon = value;
-      },
-      value: 'how'
-    }, {
-      text: 'Why join ?',
-      _icon: 'question',
-      get icon() {
-        return this._icon;
-      },
-      set icon(value) {
-        this._icon = value;
-      },
-      value: 'why'
-    },{
-      text: 'Membership conditions',
-      _icon: 'list',
-      get icon() {
-        return this._icon;
-      },
-      set icon(value) {
-        this._icon = value;
-      },
-      value: 'conditions'
-    },{
-      text: 'Return',
-      icon: 'angle-left',
-      value: 'skip'
-    }]
   }).then(function (res) {
-    if(res.value == 'how') {
-      commentEnglish();
-    } else if(res.value == 'why') {
-      pourquoiEnglish();
-    } else if(res.value == 'conditions') {
-      condionsEnglish();
-    } else {
-      mainEnglish();
-    }
+      if(res.value == 'avfa') {
+        presentationEnglish();
+      } else if(res.value == 'service') {
+        serviceEnglish(); 
+      } else if(res.value == 'coop') {
+        cooperationEnglish(); 
+      } else if(res.value == 'actu') {
+        actualiteEnglish(); 
+      } else if(res.value == 'search') {
+        chitchatEnglish(); 
+      } else {
+        start(); 
+      }
+  });
+
+
+}
+
+
+var presentationEnglish = function() {
+
+    botui.message.bot({ // TODO #2 #1 Correction des icones
+    delay: 500,
+    type:'html',
+    content: 'Founded in 1990, <strong>the Agricultural Extension and Training Agency</strong>, known by the acronym <u>AVFA</u>,\
+              is a public administrative institution with legal personality and financial autonomy.\
+              It is placed under the administrative and financial supervision of the Ministry of Agriculture, Hydraulic Resources\
+              and Fishing. The pedagogical and technical supervision of the AVFA is provided jointly by the Ministry of Training\
+              Vocational and Employment and the Ministry of Agriculture, Water Resources and Fisheries.'
+      }).then(function () {
+    return botui.action.button({
+    delay: 2000,
+    action: [{
+      text: 'Our missions',
+      _icon: 'rocket',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'missions'
+    }, {
+      text: 'Our values',
+      _icon: 'pencil',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'valeurs'
+    },{
+      text: 'Our vision',
+      _icon: 'users',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'vision'
+    },{
+      text: 'Contact the Agency',
+      _icon: 'phone',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'contact'
+    },{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }]
+  }).then(function (res) {
+      if(res.value == 'missions') {
+        missionsEnglish();
+      } else if(res.value == 'valeurs') {
+        valeursEnglish(); 
+      } else if(res.value == 'vision') {
+        visionEnglish(); 
+      } else if(res.value == 'contact') {
+        contactEnglish(); 
+      } else {
+        mainEnglish(); 
+      }
+  })
   });
 
 }
 
-var commentEnglish = function() {
+var missionsEnglish = function() {
+  botui.message.bot({
+    delay: 500,
+    type:'html',
+    content: '<span>AVFA ensures the implementation of agricultural training and extension programs provided for in economic and social development plans through:</span>\
+              <ul><li>contributing to the design and implementation of national policy on extension and vocational training in the agriculture and fisheries sectors,</li>\
+                  <li>the development, monitoring and evaluation of extension and vocational training programs in the agriculture and fisheries sectors,</li>\
+                  <li>coordination and complementarity between vocational training establishments in the agriculture and fisheries sectors,</li>\
+                  <li>the coordination of the extension system implemented by the regional commissions for agricultural development (CRDA) and the assistance of the latter in the realization of their extension programs through educational and logistical support,</li>\
+                  <li>the production and dissemination of written and audio-visual technical popularization documents,</li>\
+                  <li>the development of vocational training programs for farmers, shipowners, fishermen and agricultural labor as well as the retraining of extension workers, technicians and staff responsible for their supervision.</li>\
+              </ul>'
+      }).then(function () {
+      return botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<a href="https://www.avfa.agrinet.tn/avfa/" target="_blank"> More details on the missions here</a>'
+      });
+    }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    presentationEnglish();
+  } else{
+    presentationEnglish();
+  }
+  });
+}
+
+var valeursEnglish = function() {
    botui.message.bot({
     delay: 500,
     type:'html',
-    content: '<ul><li>Membership in the Cluster Digital Africa  is by prior application using a membership application form. It is conditioned by the acceptance of the Executive Board of the Cluster Digital Africa . And is valid for the current calendar year. After the acceptance by the structure of validation of applications, the applicant is automatically considered a member of the cluster while accepting the terms of the charter of the Cluster Digital Africa .</li>\
-                  <li><strong>Membership in Cluster Digital Africa  involves:: </strong><br> The commitment to respect the Statutes of the organization. However, if a member does not wish to renew its membership in the network, it must inform the Cluster (by mail or email) within one month (30 days).</li></ul>'
+    content: '<ul><li><strong>Collective work</strong></li>\
+                  <li><strong>Networking</strong></li>\
+                  <li><strong>Commitment</strong></li>\
+                  <li><strong>Integrity</strong></li>\
+                  <li><strong>Solidarity</strong></li>\
+                  <li><strong>Open</strong></li>\
+                  <li><strong>Liability</strong></li>\
+                  <li><strong>Sharing</strong></li>\
+              </ul>'
       }).then(function () {
     return botui.action.button({
       delay: 1000,
@@ -286,53 +217,374 @@ var commentEnglish = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    adhesionFrench();
+    presentationEnglish();
   } else{
-    adhesionFrench();
+    presentationEnglish();
   }
   });
 }
 
-var pourquoiEnglish = function() {
+var visionEnglish = function() {
+  botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<a href="https://www.avfa.agrinet.tn/avfa/" target="_blank"> Click here to learn more about the agency\'s vision. </a>'
+      }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    presentationEnglish();
+  } else{
+    presentationEnglish();
+  }
+  });
+}
+
+var contactEnglish = function() {
+  botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<div class="control">\
+        <div class="tags has-addons">\
+          <span class="tag is-primary is-light">Address: 30, rue Alain Savary,</span>\
+          <span class="tag is-primary is-light">1002 Tunis, Tunisia</span>\
+          </div></div><br>\
+          <span class="tag is-info is-rounded">Email: contact.avfa@iresa.agrinet.tn</span><br><br>\
+          <span class="tag is-warning is-rounded">Telephone: (+216) 71.789.025 /</span>\
+          <span class="tag is-warning is-rounded">71.796.915 / 71.797.086</span>'
+      }).then(function () {
+      return botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.5882197253327!2d10.1841974!3d36.828386200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca35afeec5e339b1!2sAVFA%3AAgence%20de%20la%20vulgarisation%20et%20de%20la%20formation%20agricoles!5e0!3m2!1sfr!2sbf!4v1654612264463!5m2!1sfr!2sbf" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        // content: '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"\
+        //  src="https://www.google.com/maps/place/AVFA:Agence+de+la+vulgarisation+et+de+la+formation+agricoles/@36.828386,10.184197,14z/data=!4m5!3m4!1s0x0:0xca35afeec5e339b1!8m2!3d36.8283311!4d10.1842937?hl=fr;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"\
+        //   title="AVFA:Agence de la vulgarisation et de la formation agricoles" aria-label="AVFA:Agence de la vulgarisation et de la formation agricoles"></iframe>'
+      });
+    })/*.then(function () {
+      return botui.message.bot({
+        delay: 1000,
+        loading: true,
+                 src="https://www.google.com/maps/place/AVFA:Agence+de+la+vulgarisation+et+de+la+formation+agricoles/@36.828386,10.184197,14z/data=!4m5!3m4!1s0x0:0xca35afeec5e339b1!8m2!3d36.8283311!4d10.1842937?hl=fr"\
+
+        type:'embed',
+        content: 'https://maps.google.com/maps?q=Group%20Famib%20-%20%C3%A0%20la%20hauteur%20de%20vos%20attentes&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" '
+      });
+    })*/.then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    presentationEnglish();
+  } else{
+    presentationEnglish();
+  }
+  });
+}
+
+
+
+var serviceEnglish = function() {
+     botui.action.button({
+    delay: 1000,
+    action: [{
+      text: ' Agricultural advice',
+      _icon: 'question',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'conseil'
+    }, {
+      text: 'Training',
+      _icon: 'question',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'formation'
+    },{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }]
+  }).then(function (res) {
+      if(res.value == 'conseil') {
+        conseilEnglish();
+      } else if(res.value == 'formation') {
+        formationEnglish(); 
+      } else {
+        mainEnglish(); 
+      }
+  });
+
+}
+
+var conseilEnglish = function() {
+  botui.message.bot({
+    delay: 500,
+    type:'html',
+    content: '<a href="https://www.avfa.agrinet.tn/conseil-agricole/" target="_blank"> Click here to find out more. </a>'
+      }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    serviceEnglish();
+  } else{
+    serviceEnglish();
+  }
+  });
+}
+
+var formationEnglish = function() {
 
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-    content: '<ul><li><span class="icon"><i class="fas fa-minus"></i></span>Give regional, national and international visibility to your company.</li>\
-    <li><span class="icon"><i class="fas fa-minus"></i></span>Benefit from tailor-made services and specialized training.</li>\
-    <li><span class="icon"><i class="fas fa-minus"></i></span>Access financial partners.</li>\
-    <li><span class="icon"><i class="fas fa-minus"></i></span>Support and reinforcement of growth in your business.</li>\
-    <li><span class="icon"><i class="fas fa-minus"></i></span>Be closer to your collaborators everywhere in Africa.</li></ul>'
-  }).then(function () {
+    content: '<a href="https://www.avfa.agrinet.tn/formation/" target="_blank"> Click here to find out more. </a>'
+      }).then(function () {
     return botui.action.button({
       delay: 1000,
       action: [{
-        text: 'See membership conditions',
-        value: 'conditions'
+        text: 'Agricultural advice',
+        value: 'conseil'
       },{
         text: 'Return',
         icon: 'angle-left',
         value: 'skip'
       }
     ]
-  })
-}).then(function (res) {
-  if(res.value == 'conditions') {
-    conditionsEnglish();
+    })
+  }).then(function (res) {
+  if(res.value == 'conseil') {
+    conseilEnglish();
   } else{
-    adhesionEnglish();
+    serviceEnglish();
   }
-});
+  });
 }
 
-var conditionsEnglish = function() {
+var cooperationEnglish = function() {
+  botui.action.button({
+ delay: 1000,
+ action: [{
+   text: 'AVFA Priorities',
+   _icon: 'star',
+   get icon() {
+     return this._icon;
+   },
+   set icon(value) {
+     this._icon = value;
+   },
+   value: 'priorite'
+ }, {
+   text: 'National and international conventions',
+   _icon: 'list',
+   get icon() {
+     return this._icon;
+   },
+   set icon(value) {
+     this._icon = value;
+   },
+   value: 'convention'
+ },{
+  text: 'Cooperation projects',
+  _icon: 'list',
+  get icon() {
+    return this._icon;
+  },
+  set icon(value) {
+    this._icon = value;
+  },
+  value: 'projet'
+},{
+  text: 'Support programs',
+  _icon: 'list',
+  get icon() {
+    return this._icon;
+  },
+  set icon(value) {
+    this._icon = value;
+  },
+  value: 'appui'
+},{
+     text: 'Return',
+     icon: 'angle-left',
+     value: 'skip'
+   }]
+}).then(function (res) {
+   if(res.value == 'priorite') {
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> See the priorities in detail</a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Return',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationEnglish();
+    } else{
+      cooperationEnglish();
+    }
+    });
+   } else if(res.value == 'convention') {
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> See the conventions in detail </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Return',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationEnglish();
+    } else{
+      cooperationEnglish();
+    }
+    });
+   } else if(res.value == 'projet') {
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank"> Find out more about cooperation projects </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Return',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationEnglish();
+    } else{
+      cooperationEnglish();
+    }
+    });
+  } else if(res.value == 'appui') {
+    botui.message.bot({
+      delay: 500,
+      type:'html',
+      content: '<a href="https://www.avfa.agrinet.tn/partenariats-cooperations/" target="_blank">See the support programs in detail </a>'
+        }).then(function () {
+      return botui.action.button({
+        delay: 1000,
+        action: [{
+          text: 'Return',
+          icon: 'angle-left',
+          value: 'skip'
+        }
+      ]
+      })
+    }).then(function (res) {
+    if(res.value == 'skip') {
+      cooperationEnglish();
+    } else{
+      cooperationEnglish();
+    }
+    });
+  } else {
+     mainEnglish(); 
+   }
+});
+
+}
+
+var actualiteEnglish = function() {
   botui.message.bot({
-    delay: 500,
+    delay: 50,
+    content: '📜 The latest news are loading... ⚡️'
+  });
+  botui.message.bot({
+    delay: 5000,
+    loading: true,
     type:'html',
-    content: '<ul><li><strong>Membership on approval</strong><br>Can apply to be a member of the digital cluster, any natural or legal person having this passion for transformation in the digital world, must first send a membership request by filling out a registration form and from then on, it automatically becomes a candidate member and has a reasonable period of time for admission.</li>\
-    <li><strong>Full membership</strong><br>Companies with legal personality, having their activities which fall within the digital development sector and whose headquarters or establishment are located on African territory. However, membership is subject to ratification by the executive board by simple majority.</li></ul>'
-  }).then(function () {
-    return botui.action.button({
+    content: '<ul><li><strong>Consultation for the development of a market analysis of native species with high nutruceutical and health values</strong>\
+                  <br>\
+                  <br>\
+                  <span>The Agricultural Extension and Training Agency, within the framework of the project “Valorization of native Sicilian and Tunisian plant species with nutritional interest and good for health” ESPAS, calls for a consultation 02/2021 for the selection of a consulting firm for the elaboration of a market analysis of indigenous species at high […]</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-pour-lelaboration-dune-analyse-du-marché-des-autochthones-species-à-hautes-valeurs-nutrauceutrique-et-de-sante /" target="_blank">Read More</a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+                  \
+                  <li><strong>Consultation for the selection of an event agency or company specializing in events</strong>\
+                  <br>\
+                  <br>\
+                  <span>The Agricultural Extension and Training Agency, within the framework of the project “Valorization of native Sicilian and Tunisian plant species with nutritional interest and good for health” ESPAS, calls for a consultation 04/2021 for selecting an event agency or company specializing in events (download pdf)</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-pour-la-selection-une-agence-evenementielle-ou-societe-specialisee-en-evenementielle/" target="_blank"> Read the next </a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+                  \
+                  <li><strong>Consultation for the selection of a service provider for assistance in the coordination of the “ESPAS” project</strong>\
+                  <br>\
+                  <br>\
+                  <span>The Agricultural Extension and Training Agency, within the framework of the project “Valorization of native Sicilian and Tunisian plant species with nutritional interest and good for health” ESPAS, calls for a consultation 02/2021 for selection of a service provider for project coordination assistance (download pdf)</span>\
+                  <br>\
+                  <br>\
+                  <a href="https://www.avfa.agrinet.tn/consultation-02-2021-pour-la-selection-dun-provider-de-service-pour-lassistance-a-la-coordination-du-project -espas/" target="_blank">Read More</a>\
+                  </li>\
+                  <br>\
+                  <hr>\
+                  <br>\
+              </ul>'
+      }).then(function () {
+    return  botui.action.button({
       delay: 1000,
       action: [{
         text: 'Return',
@@ -340,13 +592,13 @@ var conditionsEnglish = function() {
         value: 'skip'
       }
     ]
-  })
-}).then(function (res) {
+    })
+  }).then(function (res) {
   if(res.value == 'skip') {
-    adhesionEnglish();
+    mainEnglish();
   } else{
-    adhesionEnglish();
+    mainEnglish();
   }
-});
-}
+  });
 
+}

@@ -45,7 +45,7 @@ var start = function(){
           value: 'english'
         }, 
         {
-          text: 'Arabe',
+          text: 'عرب',
           _icon: 'check',
           get icon() {
             return this._icon;
@@ -54,17 +54,6 @@ var start = function(){
             this._icon = value;
           },
           value: 'arabe'
-        },
-        {
-          text: 'Wolof',
-          _icon: 'check',
-          get icon() {
-            return this._icon;
-          },
-          set icon(value) {
-            this._icon = value;
-          },
-          value: 'wolof'
         },
         {
           text: 'Swahili',
@@ -78,7 +67,7 @@ var start = function(){
           value: 'swahili'
         },
         {
-          text: 'Tamqsheq',
+          text: 'Haoussa',
           _icon: 'check',
           get icon() {
             return this._icon;
@@ -86,18 +75,7 @@ var start = function(){
           set icon(value) {
             this._icon = value;
           },
-          value: 'tamasheq'
-        },
-        {
-          text: 'Bambara',
-          _icon: 'check',
-          get icon() {
-            return this._icon;
-          },
-          set icon(value) {
-            this._icon = value;
-          },
-          value: 'bambara'
+          value: 'haoussa'
         },
         {
           text: 'Dioula',
@@ -110,17 +88,7 @@ var start = function(){
           },
           value: 'dioula'
         },
-        {
-          text: 'Mooré',
-          _icon: 'check',
-          get icon() {
-            return this._icon;
-          },
-          set icon(value) {
-            this._icon = value;
-          },
-          value: 'moore'
-        },
+        
         {
           text: 'Pular',
           _icon: 'check',
