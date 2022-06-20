@@ -120,9 +120,18 @@ var start = function(){
     } else if(res.value == 'french') {
       mainFrench(); 
     } else {
-      mainFrench(); 
+      enCours(); 
     }
   });
 }
 /*-------------------------------- fin section start------------------------------------*/
 
+var enCours = function(){//pour les parties non gérées (pour le moment)
+  Vue.use(Toasted)
+  Vue.toasted.show('Cette option est toujours en cours de dévéloppement!',{
+    theme: "bubble", 
+    position: "bottom-center", 
+    duration : 2000
+  });                            
+  return start();
+}
