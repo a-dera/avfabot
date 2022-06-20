@@ -116,7 +116,8 @@ var start = function(){
     if(res.value == 'english') {
       mainEnglish();
     } else if(res.value == 'pular') {
-      mainPular(); 
+      //mainPular(); 
+      enCours();
     } else if(res.value == 'french') {
       mainFrench(); 
     } else {

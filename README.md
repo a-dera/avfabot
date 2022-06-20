@@ -90,8 +90,11 @@ Ce bot a été conçu avec un lot d'outils funs et performants
 * Prise en charge de plusieurs langues dont:
   * Français
   * Anglais
-  * Arabe 
-  *
+  * Arabe _En cours de devéloppement (50%)_
+  * Pular _En cours de devéloppement (80%)_
+  * Swahili _En cours de devéloppement_
+  * Dioula  _En cours de devéloppement_
+  * Haoussa  _En cours de devéloppement_
 * Intégration de RiveScript _Toujours en cours de devéloppement_
 
 ### Divers
